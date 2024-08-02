@@ -13,6 +13,7 @@
                         <th scope="col">Data Aluguel</th>
                         <th scope="col">Hora início</th>
                         <th scope="col">Hora Fim</th>
+                        <th scope="col">Valor final</th>
                         <th scope="col">Ações</th>
                         <th scope="col"></th>
                     </tr>
@@ -25,6 +26,7 @@
                         <td width='170'>{{rent.date}}</td>
                         <td width='170'>{{rent.start_hours}}</td>
                         <td width='170'>{{rent.end_hours}}</td>
+                        <td width='170'>{{rent.valor_total}}</td>
                         <td width='70'><a href="/deleteRent/{{rent.id}}">Excluir</a></td>
                         <td><a href="/detailRent/{{rent.id}}">Editar</a></td>
                     </tr>

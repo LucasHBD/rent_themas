@@ -31,7 +31,7 @@ class RentServices():
         # caso o cliente já tiver comprado antes, dar um desconto de 10%.
         # caso o aluguel seja feito para dias dentro do intervalo de segunda e quinta feira, recebe um desconto de 40%.
         date_em_datetime = datetime.datetime.strptime(r.date, "%Y-%m-%d")
-        if date_em_datetime.isoweekday() > 4: # aplica desconto de dia da semana
+        if not date_em_datetime.isoweekday() > 4: # aplica desconto de dia da semana
             desconto_de_dia_da_semana = tema.price * 0.40
 
         for i in Rent.objects.all():
