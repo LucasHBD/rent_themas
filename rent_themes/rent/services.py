@@ -38,4 +38,6 @@ class RentServices():
             if i.client.id == r.client_id:
                 desconto_de_cliente_previo = tema.price * 0.1
 
+        r.valor_total = tema.price - (desconto_de_cliente_previo + desconto_de_dia_da_semana)
+
         return r.save()
