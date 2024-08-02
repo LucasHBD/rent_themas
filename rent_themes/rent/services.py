@@ -10,6 +10,7 @@ class RentServices():
         desconto_de_dia_da_semana = 0
         desconto_de_cliente_previo = 0
         tema = get_object_or_404(Theme, pk = request.POST['select_theme'])
+        cliente = get_object_or_404(Client, pk = request.POST['select_client'])
 
         
         a = Address(street = request.POST['street'],
@@ -34,8 +35,8 @@ class RentServices():
         if not date_em_datetime.isoweekday() > 4: # aplica desconto de dia da semana
             desconto_de_dia_da_semana = tema.price * 0.40
 
-        for i in Rent.objects.all():
-            if i.client.id == r.client_id:
+        for aluguel in Rent.objects.all():
+            if aluguel.client == cliente:
                 desconto_de_cliente_previo = tema.price * 0.1
 
         r.valor_total = tema.price - (desconto_de_cliente_previo + desconto_de_dia_da_semana)
