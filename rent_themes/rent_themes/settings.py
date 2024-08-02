@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['3.128.249.166','10.21.0.227', 'localhost', '127.0.0.1', '.vercel.app', 'moss.ifrn.edu.br']
 
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
+
  
 # Application definition
 
