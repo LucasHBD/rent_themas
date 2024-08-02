@@ -18,7 +18,7 @@
                     <tr>
                         <td>{{theme.id}}</td>
                         <td>{{theme.name}}</td>
-                        <td>{{theme.price}}</td>
+                        <td>R$ {{theme.price|floatformat:2}}</td>
                         <td width='80'><a href="/deleteTheme/{{theme.id}}">Excluir</a></td>
                         <td><a href="/detailTheme/{{theme.id}}">Editar</a></td>
                     </tr>
